@@ -6,6 +6,7 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] != 'medico') {
 }
 
 include 'db_connect.php';
+include 'functions.php';
 
 // Funções para adicionar, editar, cancelar e visualizar consultas
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -13,10 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $data = $_POST['data'];
         $hora = $_POST['hora'];
         $detalhes_paciente = $_POST['detalhes_paciente'];
-        $sql = "INSERT INTO consultas (medico_id, data, hora, detalhes_paciente) VALUES (?, ?, ?, ?)";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("isss", $_SESSION['user_id'], $data, $hora, $detalhes_paciente);
-        $stmt->execute();
+        add_consulta($conn, $_SESSION['user_id'], $data, $hora, $detalhes_paciente);
     } elseif (isset($_POST['edit_consulta'])) {
         $consulta_id = $_POST['consulta_id'];
         $data = $_POST['data'];

@@ -1,39 +1,33 @@
 <?php
 session_start();
-include 'db_connect.php';  // Inclui o arquivo de conexão
+include 'db_connect.php';
+include 'functions.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user = $_POST['username'];
-    $pass = md5($_POST['password']);  // Use um hash mais seguro na produção, como bcrypt
+    $pass = $_POST['password'];
 
-    $sql = "SELECT * FROM usuarios WHERE username = ? AND password = ?";
-    $stmt = $conn->prepare($sql);
-    if ($stmt === false) {
-        die("Erro ao preparar a consulta: " . $conn->error);
-    }
-    $stmt->bind_param("ss", $user, $pass);
-    $stmt->execute();
-    $result = $stmt->get_result();
+    $user_data = authenticate_user($conn, $user, $pass);
 
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        $_SESSION['username'] = $row['username'];
-        $_SESSION['role'] = $row['role'];
-        $_SESSION['user_id'] = $row['id'];  // Armazena o ID do usuário na sessão
+    if ($user_data) {
+        $_SESSION['username'] = $user_data['username'];
+        $_SESSION['role'] = $user_data['role'];
+        $_SESSION['user_id'] = $user_data['id'];  // Armazena o ID do usuário na sessão
         
-        if ($row['role'] == 'medico') {
+        if ($user_data['role'] == 'medico') {
             header("Location: medico_dashboard.php");
-        } else if ($row['role'] == 'paciente') {
+        } else if ($user_data['role'] == 'paciente') {
             header("Location: paciente_dashboard.php");
         }
         exit();
     } else {
-        echo "Usuário ou senha inválidos.";
-
+        $_SESSION['login_error'] = "Usuário ou senha inválidos.";
+        header("Location: login.html");
+        exit();
     }
-
-    $stmt->close();
 }
 
 $conn->close();
+?>
+
 ?>
