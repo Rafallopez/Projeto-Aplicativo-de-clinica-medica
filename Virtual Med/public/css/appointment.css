@@ -1,0 +1,158 @@
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+  }
+
+  body {
+      font-family: 'Joan', sans-serif;
+      background-color: #f5f5f5;
+  }
+
+  .appointment-container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+  }
+
+  .header-section {
+      background-color: rgba(125, 198, 91, 0.77);
+      padding: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+  }
+
+  .logo-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+  }
+
+  .logo-image {
+      width: 150px;
+      height: auto;
+  }
+
+  .brand-title {
+      font-size: 2.5rem;
+      color: #000;
+  }
+
+  .appointment-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+  }
+
+  .appointment-title {
+      font-size: 2rem;
+  }
+
+  .appointment-icon {
+      width: 52px;
+      height: auto;
+  }
+
+  .patient-section,
+  .time-section {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+  }
+
+  .patient-row,
+  .time-row {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+  }
+
+  .patient-selector,
+  .date-selector,
+  .time-selector,
+  .details-section {
+      background-color: rgba(125, 198, 91, 0.7);
+      padding: 1.5rem;
+      border-radius: 8px;
+      height: 100%;
+      min-height: 300px;
+  }
+
+  .patient-column,
+  .date-column,
+  .time-column,
+  .details-column {
+      flex: 2;
+  }
+
+  select,
+  input[type="date"],
+  input[type="time"],
+  textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-top: 1rem;
+      background-color: #d9d9d9;
+      border: none;
+      border-radius: 4px;
+      font-size: 1.2rem;
+  }
+
+  textarea.details-input {
+      height: 200px;
+      resize: vertical;
+  }
+
+  .button-group {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+  }
+
+  .schedule-button,
+  .back-button {
+      padding: 1rem 2rem;
+      background-color: #d9d9d9;
+      border: none;
+      border-radius: 4px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+  }
+
+  .schedule-button:hover,
+  .back-button:hover {
+      background-color: #c0c0c0;
+  }
+
+  label {
+      font-size: 1.5rem;
+      display: block;
+      margin-bottom: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+      .header-section {
+          flex-direction: column;
+          align-items: flex-start;
+      }
+
+      .patient-row,
+      .time-row {
+          flex-direction: column;
+      }
+
+      .button-group {
+          flex-direction: column;
+      }
+
+      .schedule-button,
+      .back-button {
+          width: 100%;
+      }
+  }

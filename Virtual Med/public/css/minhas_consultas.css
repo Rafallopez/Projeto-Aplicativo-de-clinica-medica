@@ -1,0 +1,425 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Joan', sans-serif;
+    background-color: #f5f5f5;
+}
+
+.consultation-container {
+    background-color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header-section {
+    background-color: rgba(125, 198, 91, 0.77);
+    padding: 20px 42px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-wrapper {
+    display: flex;
+    gap: 20px;
+}
+
+.logo-image {
+    width: 211px;
+    aspect-ratio: 1.68;
+    object-fit: contain;
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: #000;
+    font: 400 35px Joan, sans-serif;
+}
+  .header-icon {
+      width: 52px;
+      aspect-ratio: 0.91;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+  }
+
+  .header-icon:hover {
+      transform: scale(1.1);
+  }
+.consultations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    padding: 40px;
+    margin: 0 auto;
+    max-width: 1400px;
+    width: 100%;
+}
+
+.consultation-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.consultation-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-header {
+    background-color: #A0A99C;
+    padding: 20px;
+    color: #000;
+}
+
+.card-header h3 {
+    font: 500 22px Joan, sans-serif;
+    margin-bottom: 8px;
+}
+
+.specialty {
+    font: 400 16px Joan, sans-serif;
+    color: #333;
+    display: block;
+}
+
+.card-content {
+    padding: 25px;
+    background-color: rgba(125, 198, 91, 0.1);
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+.label {
+    font: 500 16px Joan, sans-serif;
+    color: #666;
+}
+
+.value {
+    font: 400 16px Joan, sans-serif;
+    color: #000;
+}
+
+.status-badge {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font: 400 14px Joan, sans-serif;
+    text-transform: uppercase;
+}
+
+.status-badge.agendada {
+    background-color: #7DC65B;
+    color: #fff;
+}
+
+.status-badge.concluida {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+.status-badge.cancelada {
+    background-color: #f44336;
+    color: #fff;
+}
+
+.details-section {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+.details-text {
+    margin-top: 10px;
+    font: 400 15px Joan, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    margin-top: auto;
+}
+
+.back-button {
+    background-color: rgba(125, 198, 91, 0.77);
+    padding: 15px 40px;
+    border-radius: 4px;
+    color: #000;
+    text-decoration: none;
+    font: 400 20px Joan, sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: rgba(125, 198, 91, 0.9);
+}
+
+@media (max-width: 768px) {
+    .header-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .consultations-grid {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+}
+  .action-buttons {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 20px;
+  }
+
+  .cancel-button {
+      background-color: #f44336;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 4px;
+      text-decoration: none;
+      font: 400 16px Joan, sans-serif;
+      transition: background-color 0.3s ease;
+  }
+
+  .cancel-button:hover {
+      background-color: #d32f2f;
+  }
+
+  .edit-button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 4px;
+      text-decoration: none;
+      font: 400 16px Joan, sans-serif;
+      transition: background-color 0.3s ease;
+  }
+
+  .edit-button:hover {
+      background-color: #388E3C;
+  }
+
+  .complete-button {
+      background-color: #2196F3;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 4px;
+      text-decoration: none;
+      font: 400 16px Joan, sans-serif;
+      transition: background-color 0.3s ease;
+  }
+
+  .complete-button:hover {
+      background-color: #1976D2;
+  }
+
+.search-section {
+    width: 100%;
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 40px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 15px 20px;
+    font-family: 'Joan', sans-serif;
+    font-size: 16px;
+    color: #000;
+    background-color: #fff;
+    border: 2px solid rgba(125, 198, 91, 0.77);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: rgba(125, 198, 91, 1);
+    box-shadow: 0 4px 8px rgba(125, 198, 91, 0.2);
+}
+
+.search-input::placeholder {
+    color: #666;
+}
+
+.no-appointments {
+    text-align: center;
+    padding: 40px;
+    font: 400 20px Joan, sans-serif;
+    color: #666;
+    background-color: rgba(125, 198, 91, 0.1);
+    margin: 40px;
+    border-radius: 8px;
+}
+
+.chat-button {
+    background-color: #2196F3;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 4px;
+    text-decoration: none;
+    font: 400 16px Joan, sans-serif;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+.chat-button:hover {
+    background-color: #1976D2;
+}
+
+.form-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font: 500 16px Joan, sans-serif;
+    color: #333;
+}
+
+.form-group select,
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid rgba(125, 198, 91, 0.3);
+    border-radius: 4px;
+    font: 400 16px Joan, sans-serif;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+.form-group select:focus,
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: rgba(125, 198, 91, 0.8);
+    box-shadow: 0 0 5px rgba(125, 198, 91, 0.2);
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.save-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font: 400 16px Joan, sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+.save-button:hover {
+    background-color: #388E3C;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.consultation-card {
+    min-height: 350px;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.alert {
+    width: 100%;
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font: 400 16px Joan, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.alert-success {
+    background-color: rgba(125, 198, 91, 0.2);
+    color: #388E3C;
+    border: 2px solid rgba(125, 198, 91, 0.5);
+}
+
+.alert-error {
+    background-color: rgba(244, 67, 54, 0.2);
+    color: #d32f2f;
+    border: 2px solid rgba(244, 67, 54, 0.5);
+}
+
+.welcome-text {
+    text-align: center;
+    margin: 30px 0;
+    font: 400 30px Joan, sans-serif;
+    color: #333;
+}
+
+.action-icon {
+    width: 100px;
+    height: 100px;
+    margin: 20px 0;
+}
+
+.action-button {
+    display: inline-block;
+    background-color: rgba(125, 198, 91, 0.77);
+    color: #000;
+    padding: 12px 30px;
+    border-radius: 4px;
+    text-decoration: none;
+    font: 400 16px Joan, sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+    background-color: rgba(125, 198, 91, 0.9);
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}

@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Joan', sans-serif;
+    background-color: #f5f5f5;
+}
+
+.patient-contacts {
+    background-color: #fff;
+    display: flex;
+    padding-bottom: 55px;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: center;
+}
+
+.header {
+    background-color: rgba(125, 198, 91, 0.77);
+    align-self: stretch;
+    display: flex;
+    gap: 1200px;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-container {
+    align-self: start;
+    flex-grow: 1;
+    flex-basis: auto;
+}
+
+.logo-wrapper {
+    gap: 20px;
+    display: flex;
+}
+
+.logo-image {
+    aspect-ratio: 1.68;
+    object-fit: contain;
+    width: 211px;
+}
+
+.brand-name {
+    color: #000;
+    margin-top: 14px;
+    font: 400 40px Joan, sans-serif;
+}
+
+.title-container {
+    display: flex;
+    gap: 40px;
+    color: #000;
+    flex-wrap: wrap;
+    margin: auto 0;
+    font: 400 35px Joan, sans-serif;
+}
+
+.page-title {
+    color: #000;
+    margin-top: 42px;
+    font: 400 35px Joan, sans-serif;
+}
+
+.contacts-list {
+    background-color: #A0A99C;
+    display: flex;
+    margin-top: 36px;
+    width: 715px;
+    max-width: 100%;
+    justify-content: center;
+    color: #000;
+    padding: 24px 70px 39px;
+    font: 400 35px Joan, sans-serif;
+}
+
+.contact-item {
+    align-self: end;
+    display: flex;
+    gap: 17px;
+    flex-wrap: wrap;
+}
+
+.contact-icon {
+    aspect-ratio: 0.91;
+    object-fit: contain;
+    width: 52px;
+}
+
+.names-container {
+    display: flex;
+    margin-top: 7px;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+.contact-name {
+    margin-right: 20px;
+    color: #000;
+    text-decoration: none;
+    padding: 10px;
+    transition: background-color 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contact-name:hover {
+    background-color: rgba(125, 198, 91, 0.2);
+}
+
+.contact-type {
+    font-size: 0.8em;
+    color: #555;
+}
+
+.dashboard-link {
+    background-color: rgba(125, 198, 91, 0.77);
+    margin-top: 74px;
+    width: 485px;
+    max-width: 100%;
+    color: #000;
+    padding: 11px 70px;
+    font: 400 35px Joan, sans-serif;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dashboard-link:hover {
+    background-color: rgba(125, 198, 91, 0.9);
+}
+
+@media (max-width: 991px) {
+    .header {
+        max-width: 100%;
+        padding-right: 20px;
+    }
+    
+    .logo-container {
+        max-width: 100%;
+    }
+    
+    .logo-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+    
+    .logo-image {
+        margin-top: 35px;
+    }
+    
+    .brand-name {
+        margin-top: 40px;
+    }
+    
+    .title-container {
+        max-width: 100%;
+    }
+    
+    .page-title {
+        max-width: 100%;
+        margin-top: 40px;
+    }
+    
+    .contacts-list {
+        padding: 0 20px;
+    }
+    
+    .contact-item {
+        margin-right: 2px;
+    }
+    
+    .names-container {
+        max-width: 100%;
+    }
+    
+    .contact-name {
+        max-width: 100%;
+        margin-right: 10px;
+    }
+    
+    .dashboard-link {
+        margin-top: 40px;
+        padding: 0 20px;
+    }
+}

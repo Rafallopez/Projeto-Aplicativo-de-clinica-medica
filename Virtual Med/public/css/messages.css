@@ -1,0 +1,159 @@
+/* Main container for messages */
+.messages-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    height: 60vh;
+    overflow-y: auto;
+    margin: 20px 68px;
+}
+
+.patient-section {
+    align-self: end;
+    display: flex;
+    width: 100%;
+    max-width: 988px;
+    flex-direction: column;
+    color: #000;
+    font: 400 35px Joan, sans-serif;
+}
+
+.patient-message {
+    background-color: #A0A99C;
+    align-self: end;
+    width: 654px;
+    max-width: 100%;
+    padding: 33px 30px;
+    border-radius: 15px 15px 0 15px;
+}
+
+.doctor-section {
+    align-self: start;
+    display: flex;
+    width: 100%;
+    max-width: 1261px;
+    flex-direction: column;
+    align-items: start;
+    color: #000;
+    margin-left: 24px;
+    font: 400 35px Joan, sans-serif;
+}
+
+.doctor-message {
+    background-color: rgba(125, 198, 91, 0.77);
+    width: 654px;
+    max-width: 100%;
+    padding: 45px 47px;
+    border-radius: 15px 15px 15px 0;
+}
+
+.message-time {
+    font-size: 0.7em;
+    color: #333;
+    text-align: right;
+    margin-top: 10px;
+}
+
+/* Message animations */
+.mensagem {
+    animation: fadeIn 0.3s ease-in-out;
+    transition: transform 0.2s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Scrollbar styling */
+.messages-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.messages-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.messages-container::-webkit-scrollbar-thumb {
+    background: rgba(125, 198, 91, 0.77);
+    border-radius: 4px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 991px) {
+    .messages-container {
+        margin: 20px;
+    }
+
+    .patient-section,
+    .doctor-section {
+        max-width: 100%;
+    }
+
+    .patient-message,
+    .doctor-message {
+        padding: 20px;
+    }
+}
+
+.chat-controls {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    padding: 20px 42px;
+    gap: 13px;
+    background-color: #fff;
+    border-top: 1px solid rgba(125, 198, 91, 0.77);
+}
+
+.back-button {
+    background-color: #A0A99C;
+    padding: 15px 35px;
+    cursor: pointer;
+    border: none;
+    font: 400 25px Joan, sans-serif;
+    color: #000;
+    transition: background-color 0.3s;
+    border-radius: 8px;
+}
+
+.back-button:hover {
+    background-color: #8f988b;
+}
+
+.message-input {
+    background-color: rgba(125, 198, 91, 0.77);
+    padding: 15px 32px;
+    border: none;
+    font: 400 25px Joan, sans-serif;
+    width: 100%;
+    max-width: 654px;
+    border-radius: 8px;
+}
+
+.message-input::placeholder {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.message-input:focus {
+    outline: none;
+    background-color: rgba(125, 198, 91, 0.9);
+}
+
+.send-button {
+    background-color: #A0A99C;
+    padding: 15px 35px;
+    cursor: pointer;
+    border: none;
+    font: 400 25px Joan, sans-serif;
+    color: #000;
+    transition: background-color 0.3s;
+    border-radius: 8px;
+}
+
+.send-button:hover {
+    background-color: #8f988b;
+}
